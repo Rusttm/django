@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # my apps
+    'bootstrap4',
     'products',
     'pages',
+    'ms',
 ]
 
 MIDDLEWARE = [
@@ -98,9 +100,9 @@ DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'NAME': 'djangotrain',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': '192.168.88.10',
+#         'USER': 'djangotrain',
+#         'PASSWORD': 'djangouserpass',
+#         'HOST': '185.132.199.5',
 #         'PORT': '5432',
 #     }
 # }
@@ -137,9 +139,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+DATE_INPUT_FORMATS = ['%Y-%m-%d']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/images')]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images/media')
+
+FILES_URL = '/files/'
+FILES_ROOT = os.path.join(BASE_DIR, 'files/')
